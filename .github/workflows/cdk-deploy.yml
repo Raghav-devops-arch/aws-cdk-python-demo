@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.11'
 
       - name: Install AWS CDK
         run: npm install -g aws-cdk
@@ -34,8 +34,8 @@ jobs:
 
       - name: Deploy CDK Stack
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AKIAWZF5OMYVWZRH3JNU }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.itUFqKR+Pfupgfa1qPas7i740hP3d9XIYXJsGO4Y }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ap-south-1
         run: |
           source .venv/bin/activate
